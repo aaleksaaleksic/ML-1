@@ -1,0 +1,74 @@
+TODO popuniti odgovorima na pitanja iz problema 1
+a. [5p] Šta je „word2vec“? Objasniti smisao/primenu, bez detalja implementacije.
+
+Word2vec je algoritam mašinskog učenja koji se koristi za pretvaranje reči iz prirodnog jezika u 
+numeričke vektore visoke dimenzionalnosti. 
+Osnovna ideja iza word2vec je da se rečima pridružuju vektori u prostoru tako da se očuva 
+semantička sličnost između reči.
+To znači da će reči koje se koriste u sličnim kontekstima imati slične vektore. 
+Na primer, reči „kuca“ i „maca“ će imati slične vektore jer se često pojavljuju u 
+sličnim kontekstima i oba su kućni ljubimci.
+
+Word2vec koristi dve osnovne arhitekture za generisanje vektora: CBOW (Continuous Bag of Words) i Skip-gram. 
+CBOW predviđa trenutnu reč na osnovu konteksta (tj. reči koje je okružuju),
+dok Skip-gram radi suprotno, koristeći trenutnu reč da predvidi kontekstualne reči.
+
+Primena word2vec algoritma je široka u oblastima obrade prirodnog jezika (NLP). To uključuje:
+
+Poboljšanje pretraživača tako što se omogućava pretraživanje po značenju umesto po tačnom poklapanju reči.
+Generisanje preporuka u e-trgovini ili streaming servisima na osnovu sličnosti između opisa proizvoda ili sadržaja.
+Analizu sentimenta tekstova, gde se na osnovu vektorskih reprezentacija reči može razumeti opšti ton teksta
+ (pozitivan, negativan, neutralan).
+Automatsko prevođenje jezika, gde word2vec modeli mogu da pomognu u razumevanju značenja reči 
+u jednom jeziku i njihovom prevođenju u drugi jezik.
+Kreiranje chatbotova i sistema za razumevanje prirodnog jezika, omogućavajući im da razumeju 
+varijacije u upitima ili naredbama korisnika.
+Ukratko, word2vec transformiše tekstualne podatke u numeričke vektore, omogućavajući računarima 
+da "razumeju" semantičke odnose između reči, što omogućava mnoge napredne primene u obradi
+ i analizi prirodnog jezika.
+
+
+
+
+b. [5p] Objasniti razliku između Gaussian, Multinomial i Bernouli Naive Bayes metoda.
+
+Naive Bayes metode su popularni algoritmi za klasifikaciju u mašinskom učenju koji se zasnivaju na primeni Bayesovog teorema sa "naivnom" pretpostavkom o nezavisnosti između prediktora. Iako je osnovna ideja iza svih Naive Bayes klasifikatora slična, različiti modeli se koriste u zavisnosti od distribucije podataka. Evo osnovnih razlika između Gaussian, Multinomial i Bernoulli Naive Bayes metoda:
+
+Gaussian Naive Bayes
+Gaussian Naive Bayes se koristi kada su karakteristike neprekidne i pretpostavlja se da 
+prate normalnu (Gaussovu) distribuciju.
+Ovaj model je posebno koristan u slučajevima gde karakteristike imaju prirodnu tendenciju 
+da budu raspoređene oko neke srednje vrednosti sa određenim standardnim odstupanjem.
+ Na primer, u problemima predviđanja koji uključuju merenja visine, težine ili krvnog pritiska.
+
+Multinomial Naive Bayes
+Multinomial Naive Bayes se najčešće koristi za rad sa diskretnim podacima. 
+Najtipičnija primena ovog modela je u tekstualnoj klasifikaciji,
+gde se brojevi predstavljaju kao broj pojavljivanja reči ili frekvencija reči.
+Ovaj model je odličan za situacije gde su karakteristike brojači ili frekvencijske distribucije. 
+Na primer, u analizi sentimenta ili filtriranju spam poruka, gde je značajna frekvencija pojavljivanja određenih reči.
+
+Bernoulli Naive Bayes
+Bernoulli Naive Bayes se koristi kada su karakteristike binarne (tj. mogu imati samo dve vrednosti).
+Pretpostavka je da su podaci generisani nezavisnim Bernoullijevim distribucijama.
+Idealno je prilagođen za rad sa binarnim ili boolovskim (tačno/netočno) karakteristikama. 
+Tipičan primer upotrebe je u tekstualnoj klasifikaciji gde se modelira prisustvo ili odsustvo reči u dokumentu,
+ a ne broj njihovih pojavljivanja.
+
+Dakle, glavna razlika između ova tri Naive Bayes modela leži u vrsti podataka sa kojima najbolje rade:
+ Gaussian je najbolji za neprekidne podatke koji prate normalnu distribuciju,
+Multinomial je efikasan za kategoričke podatke ili broj pojavljivanja, 
+dok je Bernoulli najpogodniji za binarne ili boolovske karakteristike. 
+
+c. [5p] Šta je „linearna separabilnost” (linear separability)? Da li su podaci iz skupa
+iris.csv linearno separabilni (objasniti šta se primećuje)?
+
+Linearna separabilnost je koncept u mašinskom učenju i statistici koji opisuje mogućnost da se 
+dve ili više klasa podataka odvoje pravom linijom (u dve dimenzije), ravninom (u tri dimenzije) ili hiper-ravninom 
+(u višim dimenzijama). U suštini, ako možete povući liniju koja tačno odvaja podatke različitih klasa, ti podaci su linearno separabilni.
+Da bismo odredili da li su podaci iz skupa iris.csv linearno separabilni, trebalo bi da analiziramo distribuciju podataka
+za svaku vrstu irisa (Setosa, Versicolor, Virginica) na osnovu dostupnih karakteristika (dužina i širina latica, 
+dužina i širina čašićnih listova) mozemo reci da je djelimicno linearno separabilna jer se Setosa vrsta vrlo lako moze odvojiti od ostalih
+u smislu da gledajuci na scatter plot podatke iz iris.csv fajla mozemo vidjeti da se Setosa uvijek po svojim karaketiristikama 
+duzine i sirine latica nalazi u odvojenom kutku plota, dok su versicolor i virginica izmjesane po donjoj sredini plota sto bi
+sugerisali da te dvije vrste bi tesko mogli linearno da podijelimo
